@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alyssa Jade P. Merjilla - Computer Engineering Student</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #45567d;
+            --accent-color: #ff7f50;
+            --light-color: #f8f9fa;
+            --dark-color: #303841;
+            --text-color: #333;
+            --light-text: #f0f0f0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+            .header {
+        position: relative;
+        padding-top: 80px; /* Creates space for the image */
+    }
+    
+    .profile-image {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--accent-color);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    @media (max-width: 768px) {
+        .profile-image {
+            position: static;
+            margin: 0 auto 20px;
+            display: block;
+        }
+        
+        .header {
+            padding-top: 20px;
+        }
+    }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #fff;
+        }
+        
+        .resume-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 3px solid var(--accent-color);
+        }
+        
+        .header h1 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .header h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .contact-item i {
+            color: var(--accent-color);
+        }
+        
+        .address {
+            font-size: 0.95rem;
+            color: var(--text-color);
+        }
+        
+        .section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .section-title {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        
+        .subsection {
+            margin-bottom: 1.8rem;
+        }
+        
+        .subsection-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subsection-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        .subsection-subtitle {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--primary-color);
+            margin-bottom: 0.3rem;
+        }
+        
+        .subsection-date {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--accent-color);
+        }
+        
+        .subsection-description {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .skill-category h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 1px dashed var(--secondary-color);
+        }
+        
+        .skill-list {
+            list-style-type: none;
+        }
+        
+        .skill-list li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .skill-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+        
+        .project-list, .certification-list {
+            list-style-type: none;
+        }
+        
+        .project-item, .certification-item {
+            margin-bottom: 1.2rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--accent-color);
+        }
+        
+        .project-title, .certification-title {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 0.3rem;
+        }
+        
+        .project-details, .certification-details {
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .project-tech, .certification-org {
+            font-style: italic;
+            color: var(--primary-color);
+        }
+        
+        .project-team {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .affiliation-item {
+            margin-bottom: 1.2rem;
+        }
+        
+        .affiliation-role {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        .affiliation-date {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .declaration {
+            font-style: italic;
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--secondary-color);
+        }
+        
+        .signature {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .resume-container {
+                padding: 1.5rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .header h2 {
+                font-size: 1.1rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.8rem;
+            }
+            
+            .subsection-header {
+                flex-direction: column;
+            }
+            
+            .subsection-date {
+                margin-top: 0.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <header class="header">
+          <img src="profile.jpg" alt="Alyssa Jade P. Merjilla" class="profile-image">
+            <h1>ALYSSA JADE P. MERJILLA</h1>
+            <h2>3rd Year - BS Computer Engineering</h2>
+            <p>Enthusiastic and highly motivated Computer Engineering student at Southern Luzon State University seeking an on-the-job training opportunity to contribute, develop skills and knowledge, and gain practical experience in the field.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>09062815416</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>merjillajadealyssa@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>linkedin.com/in/alyssa-jade-merjilla/</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-certificate"></i>
+                    <span>coursera.org/learner/alyssa-jade-p-merjilla</span>
+                </div>
+            </div>
+            
+            <div class="address">
+                <i class="fas fa-map-marker-alt"></i> Tierra Monde Sub., Bray. Sto. Cristo, Saraiva, Quezon
+            </div>
+        </header>
+        
+        <section class="section">
+            <h3 class="section-title">EDUCATION</h3>
+            
+            <div class="subsection">
+                <div class="subsection-header">
+                    <div class="subsection-title">Southern Luzon State University</div>
+                    <div class="subsection-date">2022 - Present</div>
+                </div>
+                <div class="subsection-subtitle">Bachelor of Science in Computer Engineering</div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-header">
+                    <div class="subsection-title">Manuel S. Enverga University Foundation Candelaria Inc.</div>
+                    <div class="subsection-date">2020 - 2022</div>
+                </div>
+                <div class="subsection-subtitle">Senior High School - STEM</div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-header">
+                    <div class="subsection-title">Manuel S. Enverga University Foundation Candelaria Inc.</div>
+                    <div class="subsection-date">2016 - 2020</div>
+                </div>
+                <div class="subsection-subtitle">Junior High School</div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h3 class="section-title">SKILLS</h3>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h4>Technical Skills</h4>
+                    <ul class="skill-list">
+                        <li>Programming: Python, C++, Java</li>
+                        <li>Web Development: HTML, CSS, JavaScript</li>
+                        <li>MS Office (Excel, Word)</li>
+                        <li>PCB Design using EDA tools</li>
+                        <li>Hardware Design & Soldering</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Professional Skills</h4>
+                    <ul class="skill-list">
+                        <li>Time Management</li>
+                        <li>Communication</li>
+                        <li>Management & Leadership</li>
+                        <li>Team Collaboration</li>
+                        <li>Problem Solving</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h3 class="section-title">PROJECTS</h3>
+            
+            <h4 class="subsection-title" style="margin-bottom: 1rem;">Software Projects</h4>
+            <ul class="project-list">
+                <li class="project-item">
+                    <div class="project-title">MIMAROPA_MAP</div>
+                    <div class="project-details">Regional mapping tool developed with Python</div>
+                </li>
+                <li class="project-item">
+                    <div class="project-title">Pathayan Ng Bahay</div>
+                    <div class="project-details">2D turn-based game developed with Java</div>
+                </li>
+                <li class="project-item">
+                    <div class="project-title">4Ps Calculator</div>
+                    <div class="project-details">Java application for eligibility checking in 4Ps program</div>
+                </li>
+                <li class="project-item">
+                    <div class="project-title">Financial Companion</div>
+                    <div class="project-details">Personal budgeting tool built with HTML/CSS/JS</div>
+                </li>
+                <li class="project-item">
+                    <div class="project-title">CEN Merch</div>
+                    <div class="project-details">Online merchandise store (Team of 3)</div>
+                </li>
+            </ul>
+            
+            <h4 class="subsection-title" style="margin-top: 1.5rem; margin-bottom: 1rem;">Hardware Projects</h4>
+            <ul class="project-list">
+                <li class="project-item">
+                    <div class="project-title">Passenger Counter Sensor</div>
+                    <div class="project-details">IR-based counting system (Team of 4)</div>
+                </li>
+                <li class="project-item">
+                    <div class="project-title">Regulated Power Supply</div>
+                    <div class="project-details">Adjustable voltage device (Team of 3)</div>
+                </li>
+                <li class="project-item">
+                    <div class="project-title">Water Level Indicator</div>
+                    <div class="project-details">Multi-level tank monitoring system (Team of 3)</div>
+                </li>
+                <li class="project-item">
+                    <div class="project-title">Light Detect</div>
+                    <div class="project-details">Automatic light sensor (Team of 3)</div>
+                </li>
+                <li class="project-item">
+                    <div class="project-title">Christmas Decor</div>
+                    <div class="project-details">Soldered lighting circuit</div>
+                </li>
+            </ul>
+        </section>
+        
+        <section class="section">
+            <h3 class="section-title">CERTIFICATIONS</h3>
+            <ul class="certification-list">
+                <li class="certification-item">
+                    <div class="certification-title">Foundations of Cybersecurity</div>
+                    <div class="certification-details">Google – Coursera (Completed November 2024)</div>
+                </li>
+                <li class="certification-item">
+                    <div class="certification-title">Foundations: Data, Data, Everywhere</div>
+                    <div class="certification-details">Google – Coursera (Completed November 2024)</div>
+                </li>
+                <li class="certification-item">
+                    <div class="certification-title">Google AI Essentials</div>
+                    <div class="certification-details">Google – Coursera (Completed November 2024)</div>
+                </li>
+                <li class="certification-item">
+                    <div class="certification-title">Foundations of Project Management</div>
+                    <div class="certification-details">Google – Coursera (Completed February 2025)</div>
+                </li>
+                <li class="certification-item">
+                    <div class="certification-title">Foundations of User Experience (UX) Design</div>
+                    <div class="certification-details">Google – Coursera (Completed February 2025)</div>
+                </li>
+                <li class="certification-item">
+                    <div class="certification-title">Ask Questions to Make Data-Driven Decisions</div>
+                    <div class="certification-details">Google – Coursera (Completed February 2025)</div>
+                </li>
+                <li class="certification-item">
+                    <div class="certification-title">BASIC OCCUPATIONAL SAFETY AND HEALTH (BOSH)</div>
+                    <div class="certification-details">Safety Officer 2 (2024 - Present)</div>
+                </li>
+            </ul>
+        </section>
+        
+        <section class="section">
+            <h3 class="section-title">AFFILIATIONS & LEADERSHIP</h3>
+            <div class="affiliation-item">
+                <div class="subsection-header">
+                    <div class="affiliation-role">Executive Secretary</div>
+                    <div class="affiliation-date">2024 - Present</div>
+                </div>
+                <div class="subsection-subtitle">SLSU - Society of Computer Engineering Students</div>
+            </div>
+            
+            <div class="affiliation-item">
+                <div class="subsection-header">
+                    <div class="affiliation-role">Assistant Secretary</div>
+                    <div class="affiliation-date">2023 - 2024</div>
+                </div>
+                <div class="subsection-subtitle">SLSU College of Engineering Student Council</div>
+            </div>
+            
+            <div class="affiliation-item">
+                <div class="subsection-header">
+                    <div class="affiliation-role">Member</div>
+                    <div class="affiliation-date">2022 - 2024</div>
+                </div>
+                <div class="subsection-subtitle">Institute of Computer Engineers of the Philippines Region 4A</div>
+            </div>
+            
+            <div class="affiliation-item">
+                <div class="subsection-header">
+                    <div class="affiliation-role">Participant</div>
+                    <div class="affiliation-date">2024</div>
+                </div>
+                <div class="subsection-subtitle">START UP 2024 - Student-leaders Training and Resource Team for Unleashing Potential</div>
+            </div>
+        </section>
+        
+        <div class="declaration">
+            I hereby certify that the above information is true and correct to the best of my knowledge and belief.
+        </div>
+        
+        <div class="signature">
+            ALYSSA JADE P. MERJILLA
+        </div>
+    </div>
+</body>
+</html>
